@@ -58,24 +58,3 @@ def animate(i):
 ani = animation.FuncAnimation(fig, animate, interval=3000)
 plt.show()
 
-# while True:
-#     pdp_count = get_subs_count("pewdiepie")
-#     tsrs_count = get_subs_count("tseries")
-#     print("Sub Gap :", pdp_count - tsrs_count)
-#     time.sleep(4)
-
-# pdpURL = "https://socialblade.com/youtube/user/pewdiepie/realtime"
-# tsrsURL = "https://socialblade.com/youtube/user/tseries/realtime"
-#
-#
-# def get_subs_count(url, channel_name):
-#     req = requests.get(url)
-#     soup = bs(req.text, 'html.parser')
-#     count = soup.findAll('p', id='rawCount')[0].string
-#     print(channel_name + ': ' + count)
-#
-#
-# while True:
-#     get_subs_count(pdpURL, 'PewDiePie')
-#     get_subs_count(tsrsURL, 'T-S*ries')
-#     time.sleep(20)
