@@ -2,7 +2,6 @@ import requests
 import matplotlib.pyplot as plt
 import matplotlib
 import matplotlib.animation as animation
-import datetime
 
 url = "https://www.googleapis.com/youtube/v3/channels?part=statistics&forUsername={}&key={}"
 key = "AIzaSyA4fROr5xofbdddjAoO5wZtrrQuVIP1wKA"
