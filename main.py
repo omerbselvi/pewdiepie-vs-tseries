@@ -51,10 +51,10 @@ def animate(i):
     ax1.set_ylabel('Pewdiepie Sub Count')
     ax2.set_ylabel('T-Series Sub Count')
     plt.xlabel('Time(Seconds)')
+    fig.canvas.set_window_title('Pewdiepie vs T-Series')
     print(yar)
     print(xar)
 
 
 ani = animation.FuncAnimation(fig, animate, interval=3000)
 plt.show()
-
