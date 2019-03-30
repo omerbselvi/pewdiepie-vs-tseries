@@ -4,7 +4,8 @@ import matplotlib
 import matplotlib.animation as animation
 
 url = "https://www.googleapis.com/youtube/v3/channels?part=statistics&forUsername={}&key={}"
-key = "AIzaSyA4fROr5xofbdddjAoO5wZtrrQuVIP1wKA"
+key = "*INSERT API KEY HERE*"
+
 fig = plt.figure(num=None, figsize=(10, 8), dpi=80, facecolor='w', edgecolor='k')
 ax1 = fig.add_subplot(2, 1, 1)
 ax2 = fig.add_subplot(2, 1, 2)
