@@ -1,8 +1,12 @@
 import requests
+import os.path
 import matplotlib.pyplot as plt
 import matplotlib
 import matplotlib.animation as animation
+from pygame import mixer
 
+
+my_path = os.path.abspath(os.path.dirname(__file__))
 url = "https://www.googleapis.com/youtube/v3/channels?part=statistics&forUsername={}&key={}"
 key = "*INSERT API KEY HERE*"
 
@@ -21,6 +25,14 @@ def get_subs_count(channel_id):
     subs_count = req['items'][0]["statistics"]["subscriberCount"]
     print(channel_id, " :", subs_count)
     return int(subs_count)
+
+
+def playBL():
+    path = my_path + "/res/bitch-lasagna.ogg"
+    print(path)
+    mixer.init()
+    mixer.music.load(path)
+    mixer.music.play(-1)
 
 
 def animate(i):
@@ -48,6 +60,7 @@ def animate(i):
     ax2.get_yaxis().set_major_formatter(
         matplotlib.ticker.FuncFormatter(lambda x, p: format(int(x), ',')))
     ax2.plot(x2ar, y2ar, '-or')
+    ax2.set_facecolor('xkcd:salmon')
     ax1.set_ylabel('Pewdiepie Sub Count')
     ax2.set_ylabel('T-Series Sub Count')
     plt.xlabel('Time(Seconds)')
@@ -56,5 +69,6 @@ def animate(i):
     print(xar)
 
 
+playBL()
 ani = animation.FuncAnimation(fig, animate, interval=3000)
 plt.show()
