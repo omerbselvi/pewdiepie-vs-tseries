@@ -3,11 +3,15 @@ Live subscriber counter that plots dynamic subscriber graphs side by side
 
 ## To run
 First, clone the repo
-```
+```sh
 git clone https://github.com/omerbselvi/pewdiepie-vs-tseries.git
 ```
-then;
+Update key field in main.py with your API Key
+```python
+key = "*INSERT API KEY HERE*"
 ```
+then;
+```sh
 virtualenv --python=python3 <folder-name>
 source <folder-name>/bin/activate
 pip install -r requirements.txt
