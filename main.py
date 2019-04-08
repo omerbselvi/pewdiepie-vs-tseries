@@ -4,11 +4,13 @@ import matplotlib.pyplot as plt
 import matplotlib
 import matplotlib.animation as animation
 import random
+import optparse
 from pygame import mixer
 
 my_path = os.path.abspath(os.path.dirname(__file__))
+parser = optparse.OptionParser()
 url = "https://www.googleapis.com/youtube/v3/channels?part=statistics&forUsername={}&key={}"
-key = "*INSERT API KEY HERE*"
+key = "AIzaSyBFshWcaYNFxlVysaVJ4yVNPITI1aOPhNE"
 colors = ['tab:blue', 'tab:orange', 'tab:green', 'tab:red', 'tab:purple', 'tab:brown', 'tab:pink',
           'tab:gray', 'tab:olive', 'tab:cyan']
 
@@ -60,12 +62,11 @@ def animate(i):
     ax2.get_yaxis().set_major_formatter(
         matplotlib.ticker.FuncFormatter(lambda x, p: format(int(x), ',')))
     ax2.plot(x2ar, y2ar, '-ob')
-    ax2.set_facecolor('xkcd:salmon')
     ax1.set_ylabel('Pewdiepie Sub Count')
     ax2.set_ylabel('T-Series Sub Count')
     plt.xlabel('Time(Seconds)')
     fig.canvas.set_window_title('Pewdiepie vs T-Series')
-    updateOnRender()
+    if memesEnabled == 'True': updateOnRender()
 
 
 def updateOnRender():
@@ -74,6 +75,11 @@ def updateOnRender():
     fig.set_facecolor(random.choice(colors))
 
 
-playBL()
+parser.add_option('-m', '--memes',
+                  action="store", dest="memes",
+                  help="wanna enable memes? if so send me as True", default="")
+options, args = parser.parse_args()
+memesEnabled = options.memes
+if memesEnabled == 'True': playBL()
 ani = animation.FuncAnimation(fig, animate, interval=500)
 plt.show()
