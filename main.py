@@ -10,7 +10,7 @@ from pygame import mixer
 my_path = os.path.abspath(os.path.dirname(__file__))
 parser = optparse.OptionParser()
 url = "https://www.googleapis.com/youtube/v3/channels?part=statistics&forUsername={}&key={}"
-key = "*INSERT API KEY HERE*"
+key = "AIzaSyCfD0XhOkVhfv0EQ0_rf76bOAN8QXiHZUM"
 colors = ['tab:blue', 'tab:orange', 'tab:green', 'tab:red', 'tab:purple', 'tab:brown', 'tab:pink',
           'tab:gray', 'tab:olive', 'tab:cyan']
 
@@ -50,23 +50,21 @@ def animate(i):
         yar.remove(yar[0])
         x2ar.remove(x2ar[0])
         y2ar.remove(y2ar[0])
-    ax1.clear()
-    ax1.set_title("PewDiePie")
-    ax1.ticklabel_format(useOffset=False)
-    ax1.get_yaxis().set_major_formatter(
-        matplotlib.ticker.FuncFormatter(lambda x, p: format(int(x), ',')))
-    ax1.plot(xar, yar, '-ob')
-    ax2.clear()
-    ax2.set_title("T-Series")
-    ax2.ticklabel_format(useOffset=False)
-    ax2.get_yaxis().set_major_formatter(
-        matplotlib.ticker.FuncFormatter(lambda x, p: format(int(x), ',')))
-    ax2.plot(x2ar, y2ar, '-ob')
-    ax1.set_ylabel('Pewdiepie Sub Count')
-    ax2.set_ylabel('T-Series Sub Count')
+    plotAxis(ax1, 'PewDiePie', xar, yar)
+    plotAxis(ax2, 'T-Series', x2ar, y2ar)
     plt.xlabel('Time(Seconds)')
     fig.canvas.set_window_title('Pewdiepie vs T-Series')
     if memesEnabled == 'True': updateOnRender()
+
+
+def plotAxis(ax, channel_name, x_ar, y_ar):
+    ax.clear()
+    ax.set_title(channel_name)
+    ax.ticklabel_format(useOffset=False)
+    ax.get_yaxis().set_major_formatter(
+        matplotlib.ticker.FuncFormatter(lambda x, p: format(int(x), ',')))
+    ax.plot(x_ar, y_ar, '-ob')
+    ax.set_ylabel(channel_name + 'Sub Count')
 
 
 def updateOnRender():
