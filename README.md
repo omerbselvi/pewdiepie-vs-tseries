@@ -17,6 +17,11 @@ source <folder-name>/bin/activate
 pip install -r requirements.txt
 python main.py
 ```
+Wanna enable memes? if so send 'm' or 'memes' arg as True
+```sh
+python main.py --memes True
+python main.py -m True
+```
 
 ![alt tag](https://vgy.me/TegU9j.png)
 
