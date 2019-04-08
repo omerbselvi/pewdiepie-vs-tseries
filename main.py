@@ -10,7 +10,7 @@ from pygame import mixer
 my_path = os.path.abspath(os.path.dirname(__file__))
 parser = optparse.OptionParser()
 url = "https://www.googleapis.com/youtube/v3/channels?part=statistics&forUsername={}&key={}"
-key = "AIzaSyBFshWcaYNFxlVysaVJ4yVNPITI1aOPhNE"
+key = "*INSERT API KEY HERE*"
 colors = ['tab:blue', 'tab:orange', 'tab:green', 'tab:red', 'tab:purple', 'tab:brown', 'tab:pink',
           'tab:gray', 'tab:olive', 'tab:cyan']
 
