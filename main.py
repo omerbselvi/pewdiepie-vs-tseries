@@ -10,7 +10,7 @@ from pygame import mixer
 my_path = os.path.abspath(os.path.dirname(__file__))
 parser = optparse.OptionParser()
 url = "https://www.googleapis.com/youtube/v3/channels?part=statistics&forUsername={}&key={}"
-key = "AIzaSyCfD0XhOkVhfv0EQ0_rf76bOAN8QXiHZUM"
+key = "*INSERT API KEY HERE*"
 colors = ['tab:blue', 'tab:orange', 'tab:green', 'tab:red', 'tab:purple', 'tab:brown', 'tab:pink',
           'tab:gray', 'tab:olive', 'tab:cyan']
 
@@ -53,7 +53,7 @@ def animate(i):
     plotAxis(ax1, 'PewDiePie', xar, yar)
     plotAxis(ax2, 'T-Series', x2ar, y2ar)
     plt.xlabel('Time(Seconds)')
-    fig.canvas.set_window_title('Pewdiepie vs T-Series')
+    fig.canvas.set_window_title('PewDiePie vs T-Series')
     if memesEnabled == 'True': updateOnRender()
 
 
